@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/register_nav_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.pedropereira.navigationsample.fragment.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splashFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_splashFragment_to_loggedActivity"
+            app:destination="@id/loggedActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.pedropereira.navigationsample.fragment.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_registerEmailFragment"
+            app:destination="@id/registerEmailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerEmailFragment"
+        android:name="com.pedropereira.navigationsample.fragment.RegisterEmailFragment"
+        android:label="fragment_register_email"
+        tools:layout="@layout/fragment_register_email" >
+        <action
+            android:id="@+id/action_registerEmailFragment_to_registerPersonalFragment"
+            app:destination="@id/registerPersonalFragment" />
+        <action
+            android:id="@+id/action_registerEmailFragment_to_registerPhoneFragment"
+            app:destination="@id/registerPhoneFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerPhoneFragment"
+        android:name="com.pedropereira.navigationsample.fragment.RegisterPhoneFragment"
+        android:label="fragment_register_phone"
+        tools:layout="@layout/fragment_register_phone" >
+        <action
+            android:id="@+id/action_registerPhoneFragment_to_registerPersonalFragment"
+            app:destination="@id/registerPersonalFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerPersonalFragment"
+        android:name="com.pedropereira.navigationsample.fragment.RegisterPersonalFragment"
+        android:label="fragment_register_personal"
+        tools:layout="@layout/fragment_register_personal" >
+        <action
+            android:id="@+id/action_registerPersonalFragment_to_registerPasswordFragment"
+            app:destination="@id/registerPasswordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerPasswordFragment"
+        android:name="com.pedropereira.navigationsample.fragment.RegisterPasswordFragment"
+        android:label="fragment_register_password"
+        tools:layout="@layout/fragment_register_password" >
+        <action
+            android:id="@+id/action_registerPasswordFragment_to_loggedActivity"
+            app:destination="@id/loggedActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/loggedActivity"
+        android:name="com.pedropereira.navigationsample.activity.LoggedActivity"
+        android:label="activity_logged"
+        tools:layout="@layout/activity_logged" />
+</navigation>
