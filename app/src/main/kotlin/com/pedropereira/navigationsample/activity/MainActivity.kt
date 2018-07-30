@@ -1,7 +1,8 @@
-package com.pedropereira.navigationsample
+package com.pedropereira.navigationsample.activity
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.pedropereira.navigationsample.R
 
 class MainActivity : AppCompatActivity() {
 
