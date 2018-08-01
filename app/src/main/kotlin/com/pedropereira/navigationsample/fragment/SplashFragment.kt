@@ -8,7 +8,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.orhanobut.hawk.Hawk
 import com.pedropereira.navigationsample.R
+import com.pedropereira.navigationsample.model.LOGGED_USER_KEY
+import com.pedropereira.navigationsample.model.USER_LIST_KEY
+import com.pedropereira.navigationsample.model.User
 
 class SplashFragment : Fragment() {
 
@@ -20,9 +24,23 @@ class SplashFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        Handler().postDelayed({
-            findNavController().navigate(R.id.action_splashFragment_to_loginFragment)
-        }, 9000)
+        if(!Hawk.contains(USER_LIST_KEY)){
+            Hawk.put(USER_LIST_KEY, mutableListOf<User>())
+        }
+    }
 
+    override fun onResume() {
+        super.onResume()
+
+        Handler().postDelayed(Runnable {
+            val user: User? = Hawk.get(LOGGED_USER_KEY, null)
+
+            user?.let {
+                findNavController().navigate(R.id.action_splashFragment_to_loggedActivity)
+                return@Runnable
+            }
+            findNavController().navigate(R.id.action_splashFragment_to_loginFragment)
+
+        }, 4000)
     }
 }

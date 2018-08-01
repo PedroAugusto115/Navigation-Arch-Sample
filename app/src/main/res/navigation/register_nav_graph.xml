@@ -25,6 +25,9 @@
         <action
             android:id="@+id/action_loginFragment_to_registerEmailFragment"
             app:destination="@id/registerEmailFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_loggedActivity"
+            app:destination="@id/loggedActivity" />
     </fragment>
     <fragment
         android:id="@+id/registerEmailFragment"
