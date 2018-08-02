@@ -12,10 +12,20 @@
         tools:layout="@layout/fragment_splash" >
         <action
             android:id="@+id/action_splashFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:clearTask="true"/>
         <action
             android:id="@+id/action_splashFragment_to_loggedActivity"
-            app:destination="@id/loggedActivity" />
+            app:clearTask="true"
+            app:destination="@id/loggedActivity"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
@@ -24,7 +34,11 @@
         tools:layout="@layout/fragment_login" >
         <action
             android:id="@+id/action_loginFragment_to_registerEmailFragment"
-            app:destination="@id/registerEmailFragment" />
+            app:destination="@id/registerEmailFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
         <action
             android:id="@+id/action_loginFragment_to_loggedActivity"
             app:destination="@id/loggedActivity" />
@@ -48,7 +62,7 @@
         tools:layout="@layout/fragment_register_phone" >
         <action
             android:id="@+id/action_registerPhoneFragment_to_registerPersonalFragment"
-            app:destination="@id/registerPersonalFragment" />
+            app:destination="@id/registerPersonalFragment"/>
     </fragment>
     <fragment
         android:id="@+id/registerPersonalFragment"
