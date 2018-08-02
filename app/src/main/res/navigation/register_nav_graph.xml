@@ -13,19 +13,19 @@
         <action
             android:id="@+id/action_splashFragment_to_loginFragment"
             app:destination="@id/loginFragment"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim"
-            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out"
             app:clearTask="true"/>
         <action
             android:id="@+id/action_splashFragment_to_loggedActivity"
             app:clearTask="true"
             app:destination="@id/loggedActivity"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim"
-            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
@@ -35,13 +35,17 @@
         <action
             android:id="@+id/action_loginFragment_to_registerEmailFragment"
             app:destination="@id/registerEmailFragment"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim"
-            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
         <action
             android:id="@+id/action_loginFragment_to_loggedActivity"
-            app:destination="@id/loggedActivity" />
+            app:destination="@id/loggedActivity"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
     </fragment>
     <fragment
         android:id="@+id/registerEmailFragment"
@@ -50,19 +54,31 @@
         tools:layout="@layout/fragment_register_email" >
         <action
             android:id="@+id/action_registerEmailFragment_to_registerPersonalFragment"
-            app:destination="@id/registerPersonalFragment" />
+            app:destination="@id/registerPersonalFragment"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
         <action
             android:id="@+id/action_registerEmailFragment_to_registerPhoneFragment"
-            app:destination="@id/registerPhoneFragment" />
+            app:destination="@id/registerPhoneFragment"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
     </fragment>
     <fragment
         android:id="@+id/registerPhoneFragment"
         android:name="com.pedropereira.navigationsample.fragment.RegisterPhoneFragment"
         android:label="fragment_register_phone"
-        tools:layout="@layout/fragment_register_phone" >
+        tools:layout="@layout/fragment_register_phone">
         <action
             android:id="@+id/action_registerPhoneFragment_to_registerPersonalFragment"
-            app:destination="@id/registerPersonalFragment"/>
+            app:destination="@id/registerPersonalFragment"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
     </fragment>
     <fragment
         android:id="@+id/registerPersonalFragment"
@@ -71,7 +87,11 @@
         tools:layout="@layout/fragment_register_personal" >
         <action
             android:id="@+id/action_registerPersonalFragment_to_registerPasswordFragment"
-            app:destination="@id/registerPasswordFragment" />
+            app:destination="@id/registerPasswordFragment"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
     </fragment>
     <fragment
         android:id="@+id/registerPasswordFragment"
@@ -80,7 +100,11 @@
         tools:layout="@layout/fragment_register_password" >
         <action
             android:id="@+id/action_registerPasswordFragment_to_loggedActivity"
-            app:destination="@id/loggedActivity" />
+            app:destination="@id/loggedActivity"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
     </fragment>
     <activity
         android:id="@+id/loggedActivity"

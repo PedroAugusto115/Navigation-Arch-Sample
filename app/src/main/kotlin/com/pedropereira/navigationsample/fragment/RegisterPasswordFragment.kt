@@ -20,7 +20,10 @@ class RegisterPasswordFragment : Fragment() {
     override fun onResume() {
         super.onResume()
 
-        finish_button.setOnClickListener{ it.findNavController()
-                .navigate(R.id.action_registerPasswordFragment_to_loggedActivity) }
+        finish_button.setOnClickListener{
+            it.findNavController()
+                .navigate(R.id.action_registerPasswordFragment_to_loggedActivity)
+            activity?.finish()
+        }
     }
 }
