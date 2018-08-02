@@ -11,6 +11,7 @@ import androidx.navigation.fragment.findNavController
 import com.orhanobut.hawk.Hawk
 import com.pedropereira.navigationsample.R
 import com.pedropereira.navigationsample.model.LOGGED_USER_KEY
+import com.pedropereira.navigationsample.model.USER_ARG
 import com.pedropereira.navigationsample.model.USER_LIST_KEY
 import com.pedropereira.navigationsample.model.User
 import kotlinx.android.synthetic.main.fragment_login.*
@@ -26,8 +27,15 @@ class LoginFragment : Fragment() {
         super.onResume()
 
         login.setOnClickListener{ validateAndLogin() }
-        register.setOnClickListener { it.findNavController()
-                .navigate(R.id.action_loginFragment_to_registerEmailFragment) }
+
+        register.setOnClickListener { redirectRegister(it) }
+    }
+
+    private fun redirectRegister(it: View) {
+        val bundle = Bundle()
+        bundle.putParcelable(USER_ARG, User())
+        it.findNavController()
+                .navigate(R.id.action_loginFragment_to_registerEmailFragment, bundle)
     }
 
     private fun validateAndLogin() {
@@ -40,7 +48,10 @@ class LoginFragment : Fragment() {
             if((user.email.equals(login) || user.phone.equals(login))
                     && user.password == pass) {
                 Hawk.put(LOGGED_USER_KEY, user)
-                findNavController().navigate(R.id.action_loginFragment_to_loggedActivity)
+
+                val bundle = Bundle()
+                bundle.putParcelable(USER_ARG, user)
+                findNavController().navigate(R.id.action_loginFragment_to_loggedActivity, bundle)
                 return
             }
         }

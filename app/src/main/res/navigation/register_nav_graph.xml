@@ -66,6 +66,7 @@
             app:popExitAnim="@anim/slide_out_right"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left" />
+        <argument android:name="user" />
     </fragment>
     <fragment
         android:id="@+id/registerPhoneFragment"
@@ -110,5 +111,7 @@
         android:id="@+id/loggedActivity"
         android:name="com.pedropereira.navigationsample.activity.LoggedActivity"
         android:label="activity_logged"
-        tools:layout="@layout/activity_logged" />
+        tools:layout="@layout/activity_logged" >
+        <argument android:name="user" />
+    </activity>
 </navigation>
