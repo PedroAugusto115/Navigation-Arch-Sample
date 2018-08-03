@@ -1,3 +1,3 @@
 # Navigation-Arch-Sample
 
-A simple application using Kotlin and Architecture components (LiveData, ViewModel and Navigation Library)
+A simple application using Kotlin and Navigation Architecture components
