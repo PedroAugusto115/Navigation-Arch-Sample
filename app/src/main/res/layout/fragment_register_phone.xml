@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.RegisterPhoneFragment">
+    tools:context=".fragment.notlogged.RegisterPhoneFragment">
 
     <TextView
         android:id="@+id/phone_desc"

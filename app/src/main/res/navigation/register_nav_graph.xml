@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.pedropereira.navigationsample.fragment.SplashFragment"
+        android:name="com.pedropereira.navigationsample.fragment.notlogged.SplashFragment"
         android:label="fragment_splash"
         tools:layout="@layout/fragment_splash" >
         <action
@@ -29,7 +29,7 @@
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.pedropereira.navigationsample.fragment.LoginFragment"
+        android:name="com.pedropereira.navigationsample.fragment.notlogged.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -49,7 +49,7 @@
     </fragment>
     <fragment
         android:id="@+id/registerEmailFragment"
-        android:name="com.pedropereira.navigationsample.fragment.RegisterEmailFragment"
+        android:name="com.pedropereira.navigationsample.fragment.notlogged.RegisterEmailFragment"
         android:label="fragment_register_email"
         tools:layout="@layout/fragment_register_email" >
         <action
@@ -70,7 +70,7 @@
     </fragment>
     <fragment
         android:id="@+id/registerPhoneFragment"
-        android:name="com.pedropereira.navigationsample.fragment.RegisterPhoneFragment"
+        android:name="com.pedropereira.navigationsample.fragment.notlogged.RegisterPhoneFragment"
         android:label="fragment_register_phone"
         tools:layout="@layout/fragment_register_phone">
         <action
@@ -84,7 +84,7 @@
     </fragment>
     <fragment
         android:id="@+id/registerPersonalFragment"
-        android:name="com.pedropereira.navigationsample.fragment.RegisterPersonalFragment"
+        android:name="com.pedropereira.navigationsample.fragment.notlogged.RegisterPersonalFragment"
         android:label="fragment_register_personal"
         tools:layout="@layout/fragment_register_personal" >
         <action
@@ -98,7 +98,7 @@
     </fragment>
     <fragment
         android:id="@+id/registerPasswordFragment"
-        android:name="com.pedropereira.navigationsample.fragment.RegisterPasswordFragment"
+        android:name="com.pedropereira.navigationsample.fragment.notlogged.RegisterPasswordFragment"
         android:label="fragment_register_password"
         tools:layout="@layout/fragment_register_password" >
         <action

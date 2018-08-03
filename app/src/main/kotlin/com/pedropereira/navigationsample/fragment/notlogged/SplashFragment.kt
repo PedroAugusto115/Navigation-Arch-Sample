@@ -1,4 +1,4 @@
-package com.pedropereira.navigationsample.fragment
+package com.pedropereira.navigationsample.fragment.notlogged
 
 
 import android.os.Bundle
@@ -37,6 +37,7 @@ class SplashFragment : Fragment() {
 
             user?.let {
                 findNavController().navigate(R.id.action_splashFragment_to_loggedActivity)
+                activity?.finish()
                 return@Runnable
             }
             findNavController().navigate(R.id.action_splashFragment_to_loginFragment)

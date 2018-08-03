@@ -1,4 +1,4 @@
-package com.pedropereira.navigationsample.fragment
+package com.pedropereira.navigationsample.fragment.notlogged
 
 
 import android.os.Bundle
