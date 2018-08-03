@@ -11,6 +11,7 @@ import androidx.navigation.fragment.findNavController
 import com.orhanobut.hawk.Hawk
 import com.pedropereira.navigationsample.R
 import com.pedropereira.navigationsample.model.LOGGED_USER_KEY
+import com.pedropereira.navigationsample.model.USER_ARG
 import com.pedropereira.navigationsample.model.USER_LIST_KEY
 import com.pedropereira.navigationsample.model.User
 
@@ -35,8 +36,11 @@ class SplashFragment : Fragment() {
         Handler().postDelayed(Runnable {
             val user: User? = Hawk.get(LOGGED_USER_KEY, null)
 
+            val bundle = Bundle()
+            bundle.putParcelable(USER_ARG, user)
+
             user?.let {
-                findNavController().navigate(R.id.action_splashFragment_to_loggedActivity)
+                findNavController().navigate(R.id.action_splashFragment_to_loggedActivity, bundle)
                 activity?.finish()
                 return@Runnable
             }
