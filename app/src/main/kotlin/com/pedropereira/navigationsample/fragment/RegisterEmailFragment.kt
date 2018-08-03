@@ -27,12 +27,24 @@ class RegisterEmailFragment : Fragment() {
 
         user = arguments?.getParcelable(USER_ARG)
 
-        Toast.makeText(this.activity, user!!.name, Toast.LENGTH_LONG).show()
 
-        next_button.setOnClickListener { it.findNavController()
-                .navigate(R.id.action_registerEmailFragment_to_registerPersonalFragment) }
+        next_button.setOnClickListener {
+            user?.email = user_email.text.toString()
 
-        use_phone.setOnClickListener { it.findNavController()
-                .navigate(R.id.action_registerEmailFragment_to_registerPhoneFragment) }
+            val bundle = Bundle()
+            bundle.putParcelable(USER_ARG, user)
+
+            it.findNavController()
+                    .navigate(R.id.action_registerEmailFragment_to_registerPersonalFragment, bundle)
+        }
+
+
+        use_phone.setOnClickListener {
+            val bundle = Bundle()
+            bundle.putParcelable(USER_ARG, user)
+
+            it.findNavController()
+                .navigate(R.id.action_registerEmailFragment_to_registerPhoneFragment, bundle)
+        }
     }
 }

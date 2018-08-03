@@ -80,6 +80,7 @@
             app:popExitAnim="@anim/slide_out_right"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left" />
+        <argument android:name="user" />
     </fragment>
     <fragment
         android:id="@+id/registerPersonalFragment"
@@ -93,6 +94,7 @@
             app:popExitAnim="@anim/slide_out_right"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"/>
+        <argument android:name="user" />
     </fragment>
     <fragment
         android:id="@+id/registerPasswordFragment"
@@ -106,6 +108,7 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"/>
+        <argument android:name="user" />
     </fragment>
     <activity
         android:id="@+id/loggedActivity"
