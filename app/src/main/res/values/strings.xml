@@ -3,4 +3,7 @@
     <string name="logged_text">Olá %1$s, Você está logado!!</string>
     <string name="logoff_text">Sair</string>
     <string name="splashscreen_image">Splashscreen image</string>
+    <string name="title_home">Início</string>
+    <string name="title_service">Serviços</string>
+    <string name="title_account">Conta</string>
 </resources>
