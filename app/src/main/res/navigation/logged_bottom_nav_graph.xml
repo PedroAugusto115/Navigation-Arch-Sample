@@ -9,17 +9,35 @@
         android:id="@+id/action_home"
         android:name="com.pedropereira.navigationsample.fragment.logged.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+
+        <argument
+            android:name="title"
+            android:defaultValue="@string/title_home" />
+
+    </fragment>
 
     <fragment
         android:id="@+id/action_service"
         android:name="com.pedropereira.navigationsample.fragment.logged.ServicesFragment"
         android:label="fragment_services"
-        tools:layout="@layout/fragment_services" />
+        tools:layout="@layout/fragment_services" >
+
+        <argument
+            android:name="title"
+            android:defaultValue="@string/title_service" />
+
+    </fragment>
 
     <fragment
         android:id="@+id/action_account"
         android:name="com.pedropereira.navigationsample.fragment.logged.AccountFragment"
         android:label="fragment_account"
-        tools:layout="@layout/fragment_account" />
+        tools:layout="@layout/fragment_account" >
+
+        <argument
+            android:name="title"
+            android:defaultValue="@string/title_account" />
+
+    </fragment>
 </navigation>

@@ -1,6 +1,7 @@
 package com.pedropereira.navigationsample.fragment.logged
 
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
@@ -8,13 +9,14 @@ import android.view.View
 import android.view.ViewGroup
 import com.orhanobut.hawk.Hawk
 import com.pedropereira.navigationsample.R
+import com.pedropereira.navigationsample.activity.MainActivity
 import com.pedropereira.navigationsample.model.LOGGED_USER_KEY
 import com.pedropereira.navigationsample.model.User
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment() {
 
-    private var user: User? = null
+    private val title by lazy(LazyThreadSafetyMode.NONE) { arguments?.getString("title") ?: "" }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -24,12 +26,13 @@ class HomeFragment : Fragment() {
     override fun onResume() {
         super.onResume()
 
-        //user = intent.extras.getParcelable(USER_ARG)
-
-        //textView.text = getString(R.string.logged_text, user?.name)
+        screen_title.text = title
 
         button.setOnClickListener {
             Hawk.delete(LOGGED_USER_KEY)
+
+            val intent = Intent(activity, MainActivity::class.java)
+            startActivity(intent)
 
             activity?.finish()
         }

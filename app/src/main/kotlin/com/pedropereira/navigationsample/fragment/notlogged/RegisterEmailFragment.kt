@@ -6,7 +6,6 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.navigation.findNavController
 import com.pedropereira.navigationsample.R
 import com.pedropereira.navigationsample.model.USER_ARG
@@ -26,7 +25,6 @@ class RegisterEmailFragment : Fragment() {
         super.onResume()
 
         user = arguments?.getParcelable(USER_ARG)
-
 
         next_button.setOnClickListener {
             user?.email = user_email.text.toString()
