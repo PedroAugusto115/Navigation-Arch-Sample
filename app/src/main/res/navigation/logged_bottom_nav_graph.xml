@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/action_home"
         android:name="com.pedropereira.navigationsample.fragment.logged.HomeFragment"
-        android:label="fragment_home"
+        android:label="@string/title_home"
         tools:layout="@layout/fragment_home" >
 
         <argument
@@ -20,7 +20,7 @@
     <fragment
         android:id="@+id/action_service"
         android:name="com.pedropereira.navigationsample.fragment.logged.ServicesFragment"
-        android:label="fragment_services"
+        android:label="@string/title_service"
         tools:layout="@layout/fragment_services" >
 
         <argument
@@ -32,7 +32,7 @@
     <fragment
         android:id="@+id/action_account"
         android:name="com.pedropereira.navigationsample.fragment.logged.AccountFragment"
-        android:label="fragment_account"
+        android:label="@string/title_account"
         tools:layout="@layout/fragment_account" >
 
         <argument
