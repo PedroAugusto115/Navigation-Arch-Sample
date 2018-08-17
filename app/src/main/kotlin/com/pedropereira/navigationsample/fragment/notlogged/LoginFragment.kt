@@ -28,16 +28,16 @@ class LoginFragment : Fragment() {
 
         login.setOnClickListener{ validateAndLogin() }
 
-        register.setOnClickListener { redirectRegister(it) }
+        register.setOnClickListener { redirectRegister() }
     }
 
-    private fun redirectRegister(it: View) {
+    private fun redirectRegister() {
         val user = Hawk.get(LOGGED_USER_KEY, User())
 
         val bundle = Bundle()
         bundle.putParcelable(USER_ARG, user)
 
-        it.findNavController()
+        findNavController()
                 .navigate(R.id.action_loginFragment_to_registerEmailFragment, bundle)
     }
 
