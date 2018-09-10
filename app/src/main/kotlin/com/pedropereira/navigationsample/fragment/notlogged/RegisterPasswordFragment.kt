@@ -17,7 +17,7 @@ import kotlinx.android.synthetic.main.fragment_register_password.*
 
 class RegisterPasswordFragment : Fragment() {
 
-    private var user: User? = null
+    private lateinit var user: User
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -27,26 +27,25 @@ class RegisterPasswordFragment : Fragment() {
     override fun onResume() {
         super.onResume()
 
-        user = arguments?.getParcelable(USER_ARG)
+        user = RegisterPasswordFragmentArgs.fromBundle(arguments).user
 
         finish_button.setOnClickListener{
             val pass = password.text.toString()
             val confirmPass = confirm_password.text.toString()
 
             if(pass == confirmPass){
-                user?.password = pass
+                user.password = pass
 
                 Hawk.put(LOGGED_USER_KEY, user)
 
                 val userList = Hawk.get(USER_LIST_KEY, mutableListOf<User>())
-                userList.add(user!!)
+                userList.add(user)
                 Hawk.put(USER_LIST_KEY, userList)
 
-                val bundle = Bundle()
-                bundle.putParcelable(USER_ARG, user)
+                val action = RegisterPasswordFragmentDirections
+                        .actionRegisterPasswordFragmentToLoggedActivity(user)
 
-                it.findNavController()
-                        .navigate(R.id.action_registerPasswordFragment_to_loggedActivity, bundle)
+                it.findNavController().navigate(action)
 
                 activity?.finish()
             }
