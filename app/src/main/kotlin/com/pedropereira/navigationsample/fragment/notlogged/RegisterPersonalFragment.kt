@@ -24,7 +24,7 @@ class RegisterPersonalFragment : Fragment() {
     override fun onResume() {
         super.onResume()
 
-        user = RegisterPersonalFragmentArgs.fromBundle(arguments).user
+        user = RegisterPersonalFragmentArgs.fromBundle(arguments!!).user
 
         next_button.setOnClickListener {
             user.name = user_full_name.text.toString()

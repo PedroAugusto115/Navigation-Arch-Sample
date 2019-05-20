@@ -27,7 +27,7 @@ class RegisterPasswordFragment : Fragment() {
     override fun onResume() {
         super.onResume()
 
-        user = RegisterPasswordFragmentArgs.fromBundle(arguments).user
+        user = RegisterPasswordFragmentArgs.fromBundle(arguments!!).user
 
         finish_button.setOnClickListener{
             val pass = password.text.toString()

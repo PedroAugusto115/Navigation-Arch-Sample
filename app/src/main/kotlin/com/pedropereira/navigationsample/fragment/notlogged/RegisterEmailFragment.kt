@@ -24,7 +24,7 @@ class RegisterEmailFragment : Fragment() {
     override fun onResume() {
         super.onResume()
 
-        user = RegisterEmailFragmentArgs.fromBundle(arguments).user
+        user = RegisterEmailFragmentArgs.fromBundle(arguments!!).user
 
         next_button.setOnClickListener {
             user.email = user_email.text.toString()

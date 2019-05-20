@@ -24,7 +24,7 @@ class RegisterPhoneFragment : Fragment() {
     override fun onResume() {
         super.onResume()
 
-        user = RegisterPhoneFragmentArgs.fromBundle(arguments).user
+        user = RegisterPhoneFragmentArgs.fromBundle(arguments!!).user
 
         next_button.setOnClickListener {
             user.phone = user_phone.text.toString()
