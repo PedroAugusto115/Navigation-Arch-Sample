@@ -14,7 +14,7 @@ import kotlinx.android.synthetic.main.fragment_register_phone.*
 
 class RegisterPhoneFragment : Fragment() {
 
-    private var user: User? = null
+    private lateinit var user: User
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -24,16 +24,15 @@ class RegisterPhoneFragment : Fragment() {
     override fun onResume() {
         super.onResume()
 
-        user = arguments?.getParcelable(USER_ARG)
+        user = RegisterPhoneFragmentArgs.fromBundle(arguments).user
 
         next_button.setOnClickListener {
-            user?.phone = user_phone.text.toString()
+            user.phone = user_phone.text.toString()
 
-            val bundle = Bundle()
-            bundle.putParcelable(USER_ARG, user)
+            val action = RegisterPhoneFragmentDirections
+                    .actionRegisterPhoneFragmentToRegisterPersonalFragment(user)
 
-            it.findNavController()
-                .navigate(R.id.action_registerPhoneFragment_to_registerPersonalFragment, bundle)
+            it.findNavController().navigate(action)
         }
     }
 }

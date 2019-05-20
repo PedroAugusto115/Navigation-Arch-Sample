@@ -14,7 +14,7 @@ import kotlinx.android.synthetic.main.fragment_register_personal.*
 
 class RegisterPersonalFragment : Fragment() {
 
-    private var user: User? = null
+    private lateinit var user: User
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -24,18 +24,17 @@ class RegisterPersonalFragment : Fragment() {
     override fun onResume() {
         super.onResume()
 
-        user = arguments?.getParcelable(USER_ARG)
+        user = RegisterPersonalFragmentArgs.fromBundle(arguments).user
 
         next_button.setOnClickListener {
-            user?.name = user_full_name.text.toString()
-            user?.age = Integer.parseInt(user_age.text.toString())
-            user?.city = user_city.text.toString()
+            user.name = user_full_name.text.toString()
+            user.age = Integer.parseInt(user_age.text.toString())
+            user.city = user_city.text.toString()
 
-            val bundle = Bundle()
-            bundle.putParcelable(USER_ARG, user)
+            val action = RegisterPersonalFragmentDirections
+                    .actionRegisterPersonalFragmentToRegisterPasswordFragment(user)
 
-            it.findNavController()
-                .navigate(R.id.action_registerPersonalFragment_to_registerPasswordFragment, bundle)
+            it.findNavController().navigate(action)
         }
     }
 }

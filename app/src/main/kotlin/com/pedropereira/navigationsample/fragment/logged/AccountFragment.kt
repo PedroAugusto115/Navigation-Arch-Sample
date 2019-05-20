@@ -3,6 +3,7 @@ package com.pedropereira.navigationsample.fragment.logged
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -21,5 +22,15 @@ class AccountFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         screen_title.text = title
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        Log.i("***ACCOUNT_FRAGMENT***", "onCreate executed")
+    }
+
+    override fun onDestroy() {
+        Log.i("***ACCOUNT_FRAGMENT***", "onDestroy executed")
+        super.onDestroy()
     }
 }

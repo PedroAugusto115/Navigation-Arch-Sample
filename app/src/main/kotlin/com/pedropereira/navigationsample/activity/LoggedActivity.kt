@@ -11,10 +11,13 @@ import kotlinx.android.synthetic.main.activity_logged.*
 
 class LoggedActivity : AppCompatActivity() {
 
+    lateinit var user: User
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_logged)
         setupNavigation()
+        getUser()
     }
 
     override fun onSupportNavigateUp() =
@@ -24,5 +27,9 @@ class LoggedActivity : AppCompatActivity() {
         val navController = findNavController(R.id.bottom_navigation_fragment)
         setupActionBarWithNavController(navController)
         bottom_navigation.setupWithNavController(navController)
+    }
+
+    private fun getUser() {
+        user = LoggedActivityArgs.fromBundle(intent.extras).user
     }
 }

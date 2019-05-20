@@ -28,17 +28,14 @@ class LoginFragment : Fragment() {
 
         login.setOnClickListener{ validateAndLogin() }
 
-        register.setOnClickListener { redirectRegister(it) }
+        register.setOnClickListener { redirectRegister() }
     }
 
-    private fun redirectRegister(it: View) {
+    private fun redirectRegister() {
         val user = Hawk.get(LOGGED_USER_KEY, User())
 
-        val bundle = Bundle()
-        bundle.putParcelable(USER_ARG, user)
-
-        it.findNavController()
-                .navigate(R.id.action_loginFragment_to_registerEmailFragment, bundle)
+        val action = LoginFragmentDirections.actionLoginFragmentToRegisterEmailFragment(user)
+        findNavController().navigate(action)
     }
 
     private fun validateAndLogin() {
@@ -52,9 +49,8 @@ class LoginFragment : Fragment() {
                     && user.password == pass) {
                 Hawk.put(LOGGED_USER_KEY, user)
 
-                val bundle = Bundle()
-                bundle.putParcelable(USER_ARG, user)
-                findNavController().navigate(R.id.action_loginFragment_to_loggedActivity, bundle)
+                val action = LoginFragmentDirections.actionLoginFragmentToLoggedActivity(user)
+                findNavController().navigate(action)
                 return
             }
         }

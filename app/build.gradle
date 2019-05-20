@@ -36,7 +36,3 @@ dependencies {
     implementation "com.orhanobut:hawk:$hawkVersion"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
 }
-
-repositories {
-    mavenCentral()
-}

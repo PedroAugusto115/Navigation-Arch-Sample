@@ -14,7 +14,7 @@ import kotlinx.android.synthetic.main.fragment_register_email.*
 
 class RegisterEmailFragment : Fragment() {
 
-    private var user: User? = null
+    private lateinit var user: User
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -24,25 +24,22 @@ class RegisterEmailFragment : Fragment() {
     override fun onResume() {
         super.onResume()
 
-        user = arguments?.getParcelable(USER_ARG)
+        user = RegisterEmailFragmentArgs.fromBundle(arguments).user
 
         next_button.setOnClickListener {
-            user?.email = user_email.text.toString()
+            user.email = user_email.text.toString()
 
-            val bundle = Bundle()
-            bundle.putParcelable(USER_ARG, user)
-
-            it.findNavController()
-                    .navigate(R.id.action_registerEmailFragment_to_registerPersonalFragment, bundle)
+            val action = RegisterEmailFragmentDirections
+                    .actionRegisterEmailFragmentToRegisterPersonalFragment(user)
+            it.findNavController().navigate(action)
         }
 
 
         use_phone.setOnClickListener {
-            val bundle = Bundle()
-            bundle.putParcelable(USER_ARG, user)
+            val action = RegisterEmailFragmentDirections
+                    .actionRegisterEmailFragmentToRegisterPhoneFragment(user)
 
-            it.findNavController()
-                .navigate(R.id.action_registerEmailFragment_to_registerPhoneFragment, bundle)
+            it.findNavController().navigate(action)
         }
     }
 }
